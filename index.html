@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ポモドーロ & タスクトラッカー</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>🍅 ポモドーロ & タスク</h1>
+      <div class="mode-tabs">
+        <button class="mode-btn active" data-mode="work">作業 25</button>
+        <button class="mode-btn" data-mode="short">小休憩 5</button>
+        <button class="mode-btn" data-mode="long">長休憩 15</button>
+      </div>
+    </header>
+
+    <section class="timer-card">
+      <div class="timer-display" id="timerDisplay">25:00</div>
+      <div class="timer-controls">
+        <button id="startBtn" class="btn primary">開始</button>
+        <button id="resetBtn" class="btn">リセット</button>
+      </div>
+      <div class="session-info">
+        完了したポモドーロ: <span id="sessionCount">0</span>
+      </div>
+    </section>
+
+    <section class="task-card">
+      <h2>タスク</h2>
+      <form id="taskForm" class="task-form">
+        <input type="text" id="taskInput" placeholder="タスクを入力..." autocomplete="off" />
+        <button type="submit" class="btn primary">追加</button>
+      </form>
+      <ul id="taskList" class="task-list"></ul>
+      <div class="task-footer">
+        <span id="taskStats">0 / 0 完了</span>
+        <button id="clearDoneBtn" class="btn small">完了済みを削除</button>
+      </div>
+    </section>
+  </div>
+
+  <audio id="dingSound" preload="auto">
+    <source src="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQAAAAA=" type="audio/wav">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
